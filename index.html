@@ -8,9 +8,44 @@
     <script type="text/javascript" src="vendor/d3.v3.js"></script>
     <script type="text/javascript" src="animint.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
+    <div>
+      <pre>
+        library("ggplot2")
+        library("reshape")
+        library("animint")
+
+        #create some data.frames
+        df <- read.csv(file="path_to_your_file",head=TRUE)
+        dfm<-melt(df,id="STATE")
+        dfm<-subset(dfm,variable!="Total")
+        
+        #plot1
+        p1<-ggplot()+theme(legend.position = "none")+
+          geom_bar(data=df, aes(x=STATE, y=Total,fill=STATE,clickSelects=STATE),stat="identity",position="identity")+
+          ggtitle("Cyber Crimes in India 2013")+
+          coord_flip()
+        
+        #plot2
+        p2<-ggplot()+
+          geom_bar(data=dfm,aes(x=variable,y=value,showSelected=STATE),stat="identity",position="identity")+
+          make_text(dfm,1,200,"STATE")+
+          ggtitle("Crime Motives")+ 
+          xlab("Motives")+
+          ylab("Total")+
+          coord_flip()
+
+        #saving animint to directory  
+        animint2dir(list(plot1=p1,plot2=p2),out.dir="first",open.browser=FALSE)
+        
+        #run
+        servr::httd("first")
+      </pre>
+      <a href="./ITcrimes.csv">Click here to view CSV data.</a>
+    </div>
 
     <div id="plot"> </div>
     
