@@ -11,7 +11,28 @@
   </head>
 
   <body>
+    <div><pre>
+      library("ggplot2")
+library("reshape")
+library("animint")
+df <- read.csv(file="path_to_CSV",head=TRUE) #or any other data file
+dfm<-melt(df,id="STATE")
+dfm<-subset(dfm,variable!="Total")
+p1<-ggplot()+theme(legend.position = "none")+
+	geom_bar(data=df, aes(x=STATE, y=Total,fill=STATE,clickSelects=STATE),stat="identity",position="identity")+
+	ggtitle("Cyber Crimes in India 2013")+
+	coord_flip()
+p2<-ggplot()+
+	geom_bar(data=dfm,aes(x=variable,y=value,showSelected=STATE),stat="identity",position="identity")+
+	make_text(dfm,1,200,"STATE")+
+	ggtitle("Crime Motives")+ 
+	xlab("Motives")+
+	ylab("Total")+
+	coord_flip()
 
+animint2dir(list(plot1=p1,plot2=p2),out.dir="first",open.browser=FALSE)
+servr::httd("first")</pre>
+    </div>
     <div id="plot"> </div>
     
     <script>
