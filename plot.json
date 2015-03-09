@@ -1,0 +1,430 @@
+{
+ "geoms": {
+ "geom1_bar_plot1": {
+ "geom": "rect",
+"classed": "geom1_bar_plot1",
+"aes": {
+ "x": "STATE",
+"y": "Total",
+"fill": "STATE",
+"clickSelects": "STATE" 
+},
+"params": [],
+"subset_order": [],
+"types": {
+ "fill": "rgb",
+"y": "numeric",
+"x": "numeric",
+"clickSelects": "factor",
+"PANEL": "integer",
+"group": "integer",
+"xmin": "numeric",
+"xmax": "numeric",
+"ymin": "numeric",
+"ymax": "numeric" 
+},
+"PANEL": 1,
+"chunks": 1,
+"total": 1,
+"chunk_order": [],
+"nest_order": [],
+"timeValues": [ "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR", "CHHATTISGARH", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH", "JAMMU & KASHMIR", "JHARKHAND", "KARNATAKA", "KERALA", "MADHYA PRADESH", "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND", "ORISSA", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMIL NADU", "TRIPURA", "UTTAR PRADESH", "UTTARAKHAND", "WEST BENGAL", "A & N ISLANDS", "CHANDIGARH", "D & N HAVELI", "DAMAN & DIU", "DELHI", "LAKSHADWEEP", "PUDUCHERRY" ] 
+},
+"geom2_bar_plot2": {
+ "geom": "rect",
+"classed": "geom2_bar_plot2",
+"aes": {
+ "x": "variable",
+"y": "value",
+"showSelected": "STATE" 
+},
+"params": [],
+"subset_order": [],
+"types": {
+ "y": "numeric",
+"x": "numeric",
+"showSelected": "factor",
+"PANEL": "integer",
+"group": "integer",
+"xmin": "numeric",
+"xmax": "numeric",
+"ymin": "numeric",
+"ymax": "numeric" 
+},
+"PANEL": 1,
+"chunks": {
+ "A & N ISLANDS": 1,
+"ANDHRA PRADESH": 2,
+"ARUNACHAL PRADESH": 3,
+"ASSAM": 4,
+"BIHAR": 5,
+"CHANDIGARH": 6,
+"CHHATTISGARH": 7,
+"D & N HAVELI": 8,
+"DAMAN & DIU": 9,
+"DELHI": 10,
+"GOA": 11,
+"GUJARAT": 12,
+"HARYANA": 13,
+"HIMACHAL PRADESH": 14,
+"JAMMU & KASHMIR": 15,
+"JHARKHAND": 16,
+"KARNATAKA": 17,
+"KERALA": 18,
+"LAKSHADWEEP": 19,
+"MADHYA PRADESH": 20,
+"MAHARASHTRA": 21,
+"MANIPUR": 22,
+"MEGHALAYA": 23,
+"MIZORAM": 24,
+"NAGALAND": 25,
+"ORISSA": 26,
+"PUDUCHERRY": 27,
+"PUNJAB": 28,
+"RAJASTHAN": 29,
+"SIKKIM": 30,
+"TAMIL NADU": 31,
+"TRIPURA": 32,
+"UTTAR PRADESH": 33,
+"UTTARAKHAND": 34,
+"WEST BENGAL": 35 
+},
+"total": 35,
+"chunk_order": [
+ "STATE" 
+],
+"nest_order": [],
+"timeValues": [ "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR", "CHHATTISGARH", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH", "JAMMU & KASHMIR", "JHARKHAND", "KARNATAKA", "KERALA", "MADHYA PRADESH", "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND", "ORISSA", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMIL NADU", "TRIPURA", "UTTAR PRADESH", "UTTARAKHAND", "WEST BENGAL", "A & N ISLANDS", "CHANDIGARH", "D & N HAVELI", "DAMAN & DIU", "DELHI", "LAKSHADWEEP", "PUDUCHERRY" ],
+"nextgeom": "geom3_text_plot2" 
+},
+"geom3_text_plot2": {
+ "geom": "text",
+"classed": "geom3_text_plot2",
+"aes": {
+ "x": "x",
+"y": "y",
+"label": "label",
+"showSelected": "STATE" 
+},
+"params": {
+ "parse": false 
+},
+"subset_order": [
+ "showSelected" 
+],
+"types": {
+ "y": "numeric",
+"x": "numeric",
+"label": "factor",
+"showSelected": "factor",
+"PANEL": "integer" 
+},
+"PANEL": 1,
+"chunks": 1,
+"total": 1,
+"chunk_order": [],
+"nest_order": [
+ "showSelected" 
+],
+"timeValues": [ "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR", "CHHATTISGARH", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH", "JAMMU & KASHMIR", "JHARKHAND", "KARNATAKA", "KERALA", "MADHYA PRADESH", "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND", "ORISSA", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMIL NADU", "TRIPURA", "UTTAR PRADESH", "UTTARAKHAND", "WEST BENGAL", "A & N ISLANDS", "CHANDIGARH", "D & N HAVELI", "DAMAN & DIU", "DELHI", "LAKSHADWEEP", "PUDUCHERRY" ] 
+} 
+},
+"time": {
+ "variable": "STATE",
+"ms":   2000,
+"sequence": [ "A & N ISLANDS", "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR", "CHANDIGARH", "CHHATTISGARH", "D & N HAVELI", "DAMAN & DIU", "DELHI", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH", "JAMMU & KASHMIR", "JHARKHAND", "KARNATAKA", "KERALA", "LAKSHADWEEP", "MADHYA PRADESH", "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND", "ORISSA", "PUDUCHERRY", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMIL NADU", "TRIPURA", "UTTAR PRADESH", "UTTARAKHAND", "WEST BENGAL" ] 
+},
+"duration": {
+ "STATE":   1000 
+},
+"selectors": {
+ "STATE": {
+ "selected": "A & N ISLANDS",
+"type": "single",
+"update": [
+ "geom1_bar_plot1",
+"geom2_bar_plot2",
+"geom3_text_plot2" 
+],
+"chunks": "STATE",
+"duration":   1000 
+} 
+},
+"plots": {
+ "plot1": {
+ "strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":      0,
+"right":      0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [      1 ],
+"height_proportion": [      1 ] 
+},
+"geoms": [
+ "geom1_bar_plot1" 
+],
+"axis1": {
+ "x": [
+ 0.045455,
+0.29603,
+0.54661,
+0.79718 
+],
+"xlab": [
+ "0",
+"250",
+"500",
+"750" 
+],
+"xrange": [ -45.35, 952.35 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 0.017045,
+0.045455,
+0.073864,
+0.10227,
+0.13068,
+0.15909,
+0.1875,
+0.21591,
+0.24432,
+0.27273,
+0.30114,
+0.32955,
+0.35795,
+0.38636,
+0.41477,
+0.44318,
+0.47159,
+   0.5,
+0.52841,
+0.55682,
+0.58523,
+0.61364,
+0.64205,
+0.67045,
+0.69886,
+0.72727,
+0.75568,
+0.78409,
+0.8125,
+0.84091,
+0.86932,
+0.89773,
+0.92614,
+0.95455,
+0.98295 
+],
+"ylab": [
+ "A & N ISLANDS",
+"ANDHRA PRADESH",
+"ARUNACHAL PRADESH",
+"ASSAM",
+"BIHAR",
+"CHANDIGARH",
+"CHHATTISGARH",
+"D & N HAVELI",
+"DAMAN & DIU",
+"DELHI",
+"GOA",
+"GUJARAT",
+"HARYANA",
+"HIMACHAL PRADESH",
+"JAMMU & KASHMIR",
+"JHARKHAND",
+"KARNATAKA",
+"KERALA",
+"LAKSHADWEEP",
+"MADHYA PRADESH",
+"MAHARASHTRA",
+"MANIPUR",
+"MEGHALAYA",
+"MIZORAM",
+"NAGALAND",
+"ORISSA",
+"PUDUCHERRY",
+"PUNJAB",
+"RAJASTHAN",
+"SIKKIM",
+"TAMIL NADU",
+"TRIPURA",
+"UTTAR PRADESH",
+"UTTARAKHAND",
+"WEST BENGAL" 
+],
+"yrange": [    0.4,   35.6 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Total",
+"xanchor": "middle",
+"xangle":      0,
+"ytitle": "STATE",
+"yanchor": "end",
+"yangle":      0,
+"xlabs": [
+ "0",
+"250",
+"500",
+"750" 
+],
+"ylabs": [
+ "A & N ISLANDS",
+"ANDHRA PRADESH",
+"ARUNACHAL PRADESH",
+"ASSAM",
+"BIHAR",
+"CHANDIGARH",
+"CHHATTISGARH",
+"D & N HAVELI",
+"DAMAN & DIU",
+"DELHI",
+"GOA",
+"GUJARAT",
+"HARYANA",
+"HIMACHAL PRADESH",
+"JAMMU & KASHMIR",
+"JHARKHAND",
+"KARNATAKA",
+"KERALA",
+"LAKSHADWEEP",
+"MADHYA PRADESH",
+"MAHARASHTRA",
+"MANIPUR",
+"MEGHALAYA",
+"MIZORAM",
+"NAGALAND",
+"ORISSA",
+"PUDUCHERRY",
+"PUNJAB",
+"RAJASTHAN",
+"SIKKIM",
+"TAMIL NADU",
+"TRIPURA",
+"UTTAR PRADESH",
+"UTTARAKHAND",
+"WEST BENGAL" 
+],
+"title": "Cyber Crimes in India 2013",
+"options": {
+ "width":    400,
+"height":    400 
+} 
+},
+"plot2": {
+ "strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":      0,
+"right":      0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [      1 ],
+"height_proportion": [      1 ] 
+},
+"geoms": [
+ "geom2_bar_plot2",
+"geom3_text_plot2" 
+],
+"axis1": {
+ "x": [
+ 0.045455,
+0.28788,
+0.5303,
+0.77273 
+],
+"xlab": [
+ "0",
+"100",
+"200",
+"300" 
+],
+"xrange": [ -18.75, 393.75 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 0.073171,
+0.19512,
+0.31707,
+0.43902,
+0.56098,
+0.68293,
+0.80488,
+0.92683 
+],
+"ylab": [
+ "Revenge",
+"Greed",
+"Extortion",
+"Cause.Disrepute",
+"Prank",
+"Fraud",
+"Eve.teasing",
+"Others" 
+],
+"yrange": [    0.4,    8.6 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Total",
+"xanchor": "middle",
+"xangle":      0,
+"ytitle": "Motives",
+"yanchor": "end",
+"yangle":      0,
+"xlabs": [
+ "0",
+"100",
+"200",
+"300" 
+],
+"ylabs": [
+ "Revenge",
+"Greed",
+"Extortion",
+"Cause.Disrepute",
+"Prank",
+"Fraud",
+"Eve.teasing",
+"Others" 
+],
+"legend": {},
+"title": "Crime Motives",
+"options": {
+ "width":    400,
+"height":    400 
+} 
+} 
+} 
+}
