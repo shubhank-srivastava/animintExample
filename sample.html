@@ -93,7 +93,8 @@
 			<input type="radio" name="option" value="option1" ng-click="change('opt_one');"><pre>var options = { select: ["cities"], cities:{{option1|json}} }</pre>
 			<input type="radio" name="option" value="option2" ng-click="change('opt_two');"><pre>var options = { select: ["cities"], cities:{{option2|json}} }</pre>
 		</form>
-		<pre>var plot = new animint("#plot1", "plot.json", options); or something like http://(my_url)#cities={ {{chartConfig.xAxis.categories}} }</pre>
+		<pre>var plot = new animint("#plot1", "plot.json", options); or something like http://(my_url)#cities={ {{chartConfig.xAxis.categories}} }</pre><br>
+		<div style="text-align:center"><span class="alert alert-info">Click on the legends to toggle them.</span></div>
 	</div>
 	    
 </body>
