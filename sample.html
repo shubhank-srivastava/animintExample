@@ -1,18 +1,53 @@
 <html>
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
     <script src="./vendor/highcharts-ng.js"></script>
     <script>
     	var myapp = angular.module('myapp', ["highcharts-ng"]);
-    	myapp.controller('myctrl', function ($scope) {
-
-			$scope.chartSeries = [
+    	myapp.controller('myctrl', ['$scope', function ($scope) {
+			var defaultSeries = [
 			    {"name": "Some data", "data": [1, 2, 4, 7, 3]},
 			    {"name": "Some data 3", "data": [3, 1, 2, 5, 2]},
 			    {"name": "Some data 2", "data": [5, 2, 2, 3, 5]},
 			];
+			var defaultCategories = ["Delhi","Mumbai","Kolkata","Chennai","Bangalore"];
+			
+			$scope.all = ["Delhi","Mumbai","Kolkata","Chennai","Bangalore"];
+			$scope.option1 =  ["Delhi","Mumbai","Kolkata"];
+			$scope.option2 = ["Chennai","Bangalore"];
+			var filter = function(options){
+				var exCategories = angular.copy(defaultCategories);
+				var newCategories = angular.copy(defaultCategories);
+				var newSeries = angular.copy(defaultSeries);
+				for(var i=0;i<options.length;i++){
+					var u = exCategories.indexOf(options[i]);
+					exCategories.splice(u,1);
+				};
+				
+				for(var i=0;i<exCategories.length;i++){
+					var o = newCategories.indexOf(exCategories[i]);
+					newCategories.splice(o,1);
+					for(var j=0;j<newSeries.length;j++)
+						newSeries[j].data.splice(o,1);
+				};
+			
+				$scope.chartConfig.series = angular.copy(newSeries);
+				$scope.chartConfig.xAxis.categories = angular.copy(newCategories);
+				console.log($scope.chartConfig);
+			};
+
+			$scope.change=function(arg){
+				if(arg=='all')
+					filter($scope.all);
+				else if(arg=='opt_one')
+					filter($scope.option1);
+				else if(arg=='opt_two')
+					filter($scope.option2);
+			};
+
 			$scope.chartConfig = {
 			    options: {
 			      chart: {
@@ -24,7 +59,7 @@
 			        }
 			      }
 			    },
-			    series: $scope.chartSeries,
+			    series: defaultSeries,
 			    title: {
 			      text: 'Cyber Crimes in India 2013'
 			    },
@@ -32,21 +67,34 @@
 			      enabled: false
 			    },
 			    xAxis: {
-	            	categories: ["Delhi","Mumbai","Kolkata","Chennai","Bangalore"],
+	            	categories: [],
 	            	title:{
 	            		text: 'Cities'
 	            	}
         		},
 			    loading: false,
 			    size: {}
-			  }
-		});
+			};
+			
+			
+			$scope.chartConfig.xAxis.categories = angular.copy(defaultCategories);
+		}]);
     </script>
 </head>
 <body>
 	<div ng-app="myapp" ng-controller="myctrl">
 		<!--This is an angular directive-->
-		<highchart id="chart1" config="chartConfig"></highchart>
+		<div class="col-md-10">
+			<highchart id="chart1" config="chartConfig"></highchart>
+		</div>
+		<!--********************************************************-->
+		<form class="col-md-2">
+			<input type="radio" name="option" value="all" ng-click="change('all');" checked><pre>var options = { select: ["cities"], cities:{{all|json}} }</pre>
+			<input type="radio" name="option" value="option1" ng-click="change('opt_one');"><pre>var options = { select: ["cities"], cities:{{option1|json}} }</pre>
+			<input type="radio" name="option" value="option2" ng-click="change('opt_two');"><pre>var options = { select: ["cities"], cities:{{option2|json}} }</pre>
+		</form>
+		<pre>var plot = new animint("#plot1", "plot.json", options); or something like http://(my_url)#cities={ {{chartConfig.xAxis.categories}} }</pre>
 	</div>
+	    
 </body>
 </html>
