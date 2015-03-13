@@ -1,0 +1,52 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
+    <script src="../src/highcharts-ng.js"></script>
+    <script>
+    	var myapp = angular.module('myapp', ["highcharts-ng"]);
+    	myapp.controller('myctrl', function ($scope) {
+
+			$scope.chartSeries = [
+			    {"name": "Some data", "data": [1, 2, 4, 7, 3]},
+			    {"name": "Some data 3", "data": [3, 1, 2, 5, 2]},
+			    {"name": "Some data 2", "data": [5, 2, 2, 3, 5]},
+			];
+			$scope.chartConfig = {
+			    options: {
+			      chart: {
+			        type: 'bar'
+			      },
+			      plotOptions: {
+			        series: {
+			          stacking: ''
+			        }
+			      }
+			    },
+			    series: $scope.chartSeries,
+			    title: {
+			      text: 'Cyber Crimes in India 2013'
+			    },
+			    credits: {
+			      enabled: false
+			    },
+			    xAxis: {
+	            	categories: ["Delhi","Mumbai","Kolkata","Chennai","Bangalore"],
+	            	title:{
+	            		text: 'Cities'
+	            	}
+        		},
+			    loading: false,
+			    size: {}
+			  }
+		});
+    </script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myctrl">
+		<!--This is an angular directive-->
+		<highchart id="chart1" config="chartConfig"></highchart>
+	</div>
+</body>
+</html>
